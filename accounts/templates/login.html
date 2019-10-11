@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--- Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+  </head>
+  <body>
+<!--
+    <center>
+    <h1>Login Form</h1>
+    <form action="{% url 'login' %}" method = "Post">
+
+      {% csrf_token %}
+      <input type="text" name="email" placeholder="Email"><br>
+      <input type="password" name="password" placeholder="Password"><br>
+
+      <input type="submit" value="Login">
+    </form>
+
+    <div class="container">
+      <div class="alert alert-warning">
+        <strong>Warning!</strong> {% for message in messages %} <h3> {{message}} Please try again.</h3> {% endfor %}
+      </div>
+    </div>
+</center>
+
+-->
+<div class="container">
+<br>  <p class="text-center">More bootstrap 4 components on <a href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com</a></p>
+<hr>
+
+<div class="card bg-light">
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Login into your Account</h4>
+	<p class="text-center">Get started with your login</p>
+	<p>
+		<a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+		<a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+	</p>
+	<p class="divider-text">
+        <span class="bg-light">OR</span>
+    </p>
+
+<form action="{% url 'login' %}" method="Post">
+  {% csrf_token %}
+  <div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		 </div>
+        <input name="email" class="form-control" placeholder="Email address" type="email" required>
+    </div> <!-- form-group// -->
+
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+       </div>
+          <input name="password" class="form-control" placeholder="Password" type="password" required>
+      </div> <!-- form-group// -->
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+      </div> <!-- form-group// -->
+      <p class="text-center">Create an account? <a href="/accounts/register">Register</a> </p>
+  </form>
+  </article>
+  </div> <!-- card.// -->
+
+  </div>
+  <!--container end.//-->
+
+  <div>
+    {% for message in messages %}
+    <center>
+    <div class="alert alert-warning" role="alert">
+      {{message}} Please try again.
+    </div>
+  </center>
+    {% endfor %}
+  </div>
+
+  <br><br>
+  <article class="bg-secondary mb-3">
+  <div class="card-body text-center">
+      <h3 class="text-white mt-3">Bootstrap 4 UI KIT</h3>
+  <p class="h5 text-white">Components and templates  <br> for Ecommerce, marketplace, booking websites
+  and product landing pages</p>   <br>
+  <p><a class="btn btn-warning" target="_blank" href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com
+   <i class="fa fa-window-restore "></i></a></p>
+  </div>
+  <br><br>
+  </article>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+  </body>
+</html>
